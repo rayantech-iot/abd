@@ -19,10 +19,8 @@ const colors = ['#22c55e', '#ef4444', '#3b82f6', '#f59e0b'];
 export function CVDetectionDemo({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
-  const detections = useState(() => [] as DetectionBox[])[0];
-  const setDetections = useState(() => [] as DetectionBox[])[1];
-  const frame = useState(0)[0];
-  const setFrame = useState(0)[1];
+  const [detections, setDetections] = useState<DetectionBox[]>([]);
+  const [frame, setFrame] = useState(0);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
 
   useEffect(() => {

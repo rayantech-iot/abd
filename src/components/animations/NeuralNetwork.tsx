@@ -23,10 +23,8 @@ interface Connection {
 export function NeuralNetwork({ className, width, height }: { className?: string; width?: number; height?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
-  const nodes = useState(() => [] as Node[])[0];
-  const setNodes = useState(() => [] as Node[])[1];
-  const connections = useState(() => [] as Connection[])[0];
-  const setConnections = useState(() => [] as Connection[])[1];
+  const [nodes, setNodes] = useState<Node[]>([]);
+  const [connections, setConnections] = useState<Connection[]>([]);
   const [initialized, setInitialized] = useState(false);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
 
