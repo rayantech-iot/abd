@@ -23,9 +23,7 @@ interface Connection {
 export function NeuralNetwork({ className, width, height }: { className?: string; width?: number; height?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
-  // @ts-expect-error - TypeScript false positive with useState generic
   const [nodes, setNodes] = useState<Node[]>([]);
-  // @ts-expect-error - TypeScript false positive with useState generic
   const [connections, setConnections] = useState<Connection[]>([]);
   const [initialized, setInitialized] = useState(false);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);

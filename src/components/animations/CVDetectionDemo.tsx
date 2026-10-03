@@ -19,9 +19,7 @@ const colors = ['#22c55e', '#ef4444', '#3b82f6', '#f59e0b'];
 export function CVDetectionDemo({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
-  // @ts-expect-error - TypeScript false positive with useState generic
   const [detections, setDetections] = useState<DetectionBox[]>([]);
-  // @ts-expect-error - TypeScript false positive with useState generic
   const [frame, setFrame] = useState(0);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
 
@@ -209,3 +207,6 @@ interface DetectionBox {
   confidence: number;
   color: string;
 }
+
+const labels = ['Person', 'Risk Zone', 'Swimmer', 'Alert'];
+const colors = ['#22c55e', '#ef4444', '#3b82f6', '#f59e0b'];

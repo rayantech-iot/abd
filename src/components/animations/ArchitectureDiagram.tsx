@@ -11,8 +11,7 @@ interface ArchitectureDiagramProps {
 }
 
 export function ArchitectureDiagram({ steps, className, vertical = false }: ArchitectureDiagramProps) {
-  // @ts-expect-error - TypeScript false positive with useState generic
-  const [animatedSteps, setAnimatedSteps] = useState<Set<number>>(new Set());
+  const [animatedSteps, setAnimatedSteps] = useState(() => new Set<number>());
   const observerRef = useRef<IntersectionObserver>();
   const containerRef = useRef<HTMLDivElement>(null);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
