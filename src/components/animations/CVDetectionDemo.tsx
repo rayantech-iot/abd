@@ -209,6 +209,3 @@ interface DetectionBox {
   confidence: number;
   color: string;
 }
-
-const labels = ['Person', 'Risk Zone', 'Swimmer', 'Alert'];
-const colors = ['#22c55e', '#ef4444', '#3b82f6', '#f59e0b'];
